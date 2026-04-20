@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find nav_demo)/launch/nav01_slam.launch"/>
+    <include file="$(find nav_demo)/launch/path.launch"/>
+  
+    <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan">
+        <remap from="image" to="/camera/depth/image_raw" />
+        <param name="libgazebo_ros_openni_kinect.so" value="camera"  />
+    </node>
+
+
+    
+
+</launch>

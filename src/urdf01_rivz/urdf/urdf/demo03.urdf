@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="mycar">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.3 0.2 0.1"/>
+            </geometry>
+            <material name="mycar">
+                <color rgba="0 0 1 1" />
+            </material>
+        </visual>    
+    </link> 
+    <link name="camrea">
+        <visual>
+            <geometry>
+                <box size="0.02 0.02 0.052"/>
+            </geometry>
+            <material name="camera">
+                <color rgba="0 0 0 1" />
+            </material>
+            <origin xyz="0.0 0.0 0.025" rpy="0.0 0.0 0.0"/>
+            
+        </visual>
+    </link>
+    <joint name="camareq" type="continuous">
+        <!-- 父级 link -->
+        <parent link="base_link"/>
+        
+        <!-- ziji link -->
+        <child link="camrea"/>
+
+        <!-- pian yi -->
+        <origin xyz="0.15 0 0.052" rpy="0.0 0.0 0.0"/>
+                
+        <!-- guanjie -->
+        <axis xyz="0.0 0.0 1"/>
+
+    </joint>    
+</robot>
